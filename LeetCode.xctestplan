@@ -1,0 +1,41 @@
+{
+  "configurations" : [
+    {
+      "id" : "A1C6B978-BC90-407C-87BA-396F27E14221",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:LeetCode.xcodeproj",
+      "identifier" : "42407D562B82289800F34D88",
+      "name" : "LeetCode"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "LeetCodeTests"
+      ],
+      "target" : {
+        "containerPath" : "container:LeetCode.xcodeproj",
+        "identifier" : "42407D662B82289B00F34D88",
+        "name" : "LeetCodeTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:LeetCode.xcodeproj",
+        "identifier" : "42407D702B82289B00F34D88",
+        "name" : "LeetCodeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
