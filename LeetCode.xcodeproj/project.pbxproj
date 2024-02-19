@@ -16,6 +16,8 @@
 		42407D782B82289B00F34D88 /* LeetCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42407D772B82289B00F34D88 /* LeetCodeUITestsLaunchTests.swift */; };
 		42407D852B82296C00F34D88 /* AddTwoNumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42407D842B82296C00F34D88 /* AddTwoNumbersTests.swift */; };
 		42407D872B82297C00F34D88 /* AddTwoNumbersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */; };
+		42733BC22B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42733BC12B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift */; };
+		42733BC52B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		42407D842B82296C00F34D88 /* AddTwoNumbersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTwoNumbersTests.swift; sourceTree = "<group>"; };
 		42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTwoNumbersModel.swift; sourceTree = "<group>"; };
 		42407D882B822A5500F34D88 /* LeetCode.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LeetCode.xctestplan; sourceTree = "<group>"; };
+		42733BC12B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestPalindromeSubstringTests.swift; sourceTree = "<group>"; };
+		42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestPalindromeSubstringModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,8 @@
 		42407D592B82289800F34D88 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				42733BC32B830B0000C25DD0 /* Models */,
 				42407D5A2B82289800F34D88 /* LeetCodeApp.swift */,
-				42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */,
 				42407D5C2B82289800F34D88 /* ContentView.swift */,
 				42407D5E2B82289A00F34D88 /* Assets.xcassets */,
 				42407D602B82289A00F34D88 /* Preview Content */,
@@ -122,6 +126,7 @@
 			children = (
 				42407D842B82296C00F34D88 /* AddTwoNumbersTests.swift */,
 				42407D6B2B82289B00F34D88 /* LeetCodeTests.swift */,
+				42733BC12B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift */,
 			);
 			path = LeetCodeTests;
 			sourceTree = "<group>";
@@ -133,6 +138,15 @@
 				42407D772B82289B00F34D88 /* LeetCodeUITestsLaunchTests.swift */,
 			);
 			path = LeetCodeUITests;
+			sourceTree = "<group>";
+		};
+		42733BC32B830B0000C25DD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */,
+				42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42407D5D2B82289800F34D88 /* ContentView.swift in Sources */,
+				42733BC52B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift in Sources */,
 				42407D872B82297C00F34D88 /* AddTwoNumbersModel.swift in Sources */,
 				42407D5B2B82289800F34D88 /* LeetCodeApp.swift in Sources */,
 			);
@@ -276,6 +291,7 @@
 			files = (
 				42407D6C2B82289B00F34D88 /* LeetCodeTests.swift in Sources */,
 				42407D852B82296C00F34D88 /* AddTwoNumbersTests.swift in Sources */,
+				42733BC22B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
