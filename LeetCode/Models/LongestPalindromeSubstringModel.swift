@@ -24,26 +24,30 @@ struct LongestPalindromeSubstringModel {
 
     private func longestPalindromeInternal(_ s: String) -> String {
         let arr = Array(s)
-        var dict = [Character: [Int]]()
-        var longestPalindrome = String(s.first!)
 
-        for (index, char) in arr.enumerated() {
-            if let prevIndexes = dict[char] {
+        var longest = (0, 0)
+        for i in 1..<arr.count {
+            var shouldStop = false
+            var counter = 1
+            while !shouldStop {
 
-                for indexIndex in prevIndexes {
-                    let newArr = Array(arr[indexIndex...index])
-                    if newArr.isPalindrome() {
-                        if longestPalindrome.count - 1 < index - indexIndex {
-                            longestPalindrome = String(arr[indexIndex...index])
-                        }
-                    } 
-                    dict[char]?.append(index)
+                if i - counter < 0 || i + counter == arr.count {
+                    shouldStop = true
+                    continue
                 }
-            } else {
-                dict[char] = [index]
+
+                if arr[i - counter] != arr[i + counter] {
+                    shouldStop = true
+                    continue
+                }
+                if longest.1 - longest.0 < (i + counter - abs(i - counter)) {
+                    longest.0 = i - counter
+                    longest.1 = i + counter
+                }
+                counter += 1
             }
         }
-        return longestPalindrome
+        return String(arr[longest.0...longest.1])
     }
 }
 
