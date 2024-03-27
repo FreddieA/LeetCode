@@ -18,6 +18,7 @@
 		42407D872B82297C00F34D88 /* AddTwoNumbersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */; };
 		42733BC22B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42733BC12B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift */; };
 		42733BC52B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */; };
+		42ED22B22B963E31000C892D /* SILExampe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42ED22B12B963E31000C892D /* SILExampe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		42407D882B822A5500F34D88 /* LeetCode.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = LeetCode.xctestplan; sourceTree = "<group>"; };
 		42733BC12B830AF000C25DD0 /* LongestPalindromeSubstringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestPalindromeSubstringTests.swift; sourceTree = "<group>"; };
 		42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestPalindromeSubstringModel.swift; sourceTree = "<group>"; };
+		42ED22B12B963E31000C892D /* SILExampe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SILExampe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +145,19 @@
 		42733BC32B830B0000C25DD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42ED22B02B963DC8000C892D /* Playground */,
 				42407D862B82297C00F34D88 /* AddTwoNumbersModel.swift */,
 				42733BC42B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		42ED22B02B963DC8000C892D /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				42ED22B12B963E31000C892D /* SILExampe.swift */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ED22B22B963E31000C892D /* SILExampe.swift in Sources */,
 				42407D5D2B82289800F34D88 /* ContentView.swift in Sources */,
 				42733BC52B830B1A00C25DD0 /* LongestPalindromeSubstringModel.swift in Sources */,
 				42407D872B82297C00F34D88 /* AddTwoNumbersModel.swift in Sources */,

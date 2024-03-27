@@ -24,42 +24,47 @@ struct LongestPalindromeSubstringModel {
 
     private func longestPalindromeInternal(_ s: String) -> String {
         let arr = Array(s)
+        var c = (1,1)
+        var l = (1,1)
 
-        var longest = (0, 0)
-        for i in 1..<arr.count {
-            var shouldStop = false
-            var counter = 1
-            while !shouldStop {
+        while c.1+1 < arr.count {
 
-                if i - counter < 0 || i + counter == arr.count {
-                    shouldStop = true
-                    continue
+            if arr[max(c.0-1, 0)] == arr[c.1+1] {
+                c.0 = max(c.0-1, 0)
+                c.1 += 1
+                compare(rhs: c, lhs: &l)
+            } else if arr[c.0-1] == arr[c.0] && arr[c.0...c.1].isHomogenous() {
+                c.0 -= 1
+                compare(rhs: c, lhs: &l)
+            } else if arr[c.1+1] == arr[c.1] && arr[c.0...c.1].isHomogenous() {
+                c.1 += 1
+                compare(rhs: c, lhs: &l)
+            } else {
+                if c.1 - c.0 > 1 {
+                    c.0 = (c.1 - c.0 / 2) + 1
+                    c.1 = c.0
+                } else {
+                    c.0 = c.1 + 1
+                    c.1 = c.0
                 }
-
-                if arr[i - counter] != arr[i + counter] {
-                    shouldStop = true
-                    continue
-                }
-                if longest.1 - longest.0 < (i + counter - abs(i - counter)) {
-                    longest.0 = i - counter
-                    longest.1 = i + counter
-                }
-                counter += 1
             }
         }
-        return String(arr[longest.0...longest.1])
+        return String(arr[l.0...l.1])
+    }
+
+    private func compare(rhs: (Int, Int), lhs: inout (Int, Int)) {
+        if rhs.1 - rhs.0 > lhs.1 - lhs.0 {
+            lhs.1 = rhs.1
+            lhs.0 = rhs.0
+        }
     }
 }
 
-extension Array where Element == Character {
+extension ArraySlice where Element == Character {
 
-    func isPalindrome() -> Bool {
-
-        guard self.count > 1 else {
-            return false
-        }
-        for i in 0...self.count / 2 {
-            if self[i] != self[self.count - i - 1] {
+    func isHomogenous() -> Bool {
+        for i in self.startIndex+1..<self.endIndex {
+            if self[i] != self[i-1] {
                 return false
             }
         }
