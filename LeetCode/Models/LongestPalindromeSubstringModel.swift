@@ -25,41 +25,38 @@ struct LongestPalindromeSubstringModel {
     private func longestPalindromeInternal(_ s: String) -> String {
         let arr = Array(s)
 
-        var longest = (0, 0)
-        for i in 1..<arr.count {
-            var shouldStop = false
-            var counter = 1
-            while !shouldStop {
+        var center = 0
+        var l = (0,0)
+        var c = (0,0)
 
-                if i - counter < 0 || i + counter == arr.count {
-                    shouldStop = true
-                    continue
-                }
+        for i in (0..<arr.count) {
+            
+            let oppositeIndex = abs(center - (i - center))
+            if oppositeIndex < 0 {
+                continue
+            }
+            if arr[oppositeIndex] == arr[i] {
+                c.0 = oppositeIndex
+                c.1 = i
+            } else {
+                center += 1
+            }
 
-                if arr[i - counter] != arr[i + counter] {
-                    shouldStop = true
-                    continue
-                }
-                if longest.1 - longest.0 < (i + counter - abs(i - counter)) {
-                    longest.0 = i - counter
-                    longest.1 = i + counter
-                }
-                counter += 1
+            if c.1 - c.0 > l.1 - l.0 {
+                l.0 = c.0
+                l.1 = c.1
             }
         }
-        return String(arr[longest.0...longest.1])
+
+        return String(arr[l.0...l.1])
     }
 }
 
 extension Array where Element == Character {
 
-    func isPalindrome() -> Bool {
-
-        guard self.count > 1 else {
-            return false
-        }
-        for i in 0...self.count / 2 {
-            if self[i] != self[self.count - i - 1] {
+    func isHomogenous() -> Bool {
+        for i in 1..<self.count {
+            if self[i] != self[i-1] {
                 return false
             }
         }
